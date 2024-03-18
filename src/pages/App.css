@@ -1,0 +1,43 @@
+.App{
+
+}
+
+.lk_icon {
+  background-image: url(../../public/svg/lkperson.svg);
+  background-size: 100% 100%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-left: 60%;
+}
+.lk_txt{
+  position: relative;
+}
+
+.lk_data{
+  margin-top: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(217,217,217,0);
+  opacity: 1;
+  border: 2px solid rgba(0,0,0,1);
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: -1;
+}
+.Hard_skills{
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  border: 2px solid rgba(0,0,0,1);
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 0;
+}
+.Result_test{
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  border: 2px solid rgba(0,0,0,1);
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 0;
+}
