@@ -1,11 +1,11 @@
 import React from "react"
-
+import "./reg.css"
 import { NavLink } from "react-router-dom";
 
 const Reg = () => {
     return (
         <div className="Reg_module">
-            <NavLink to="/login" className="back_from_reg"></NavLink>
+            <NavLink to="/login"><div className="back_img"></div></NavLink>
             <div className="reg_choise_person"> Выберите роль</div>
             <label className="reg_role_0_label">Исполнитель(участник проекта)</label>
             <input type="radio" className="reg_role_0" id="reg_role_0" />
