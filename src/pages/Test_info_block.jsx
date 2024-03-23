@@ -1,8 +1,8 @@
 import React from "react"
 
-const Test_info_block = () => {
+const Test_info_block_second = () => {
     return (
-        <div className="test_info_block">
+        <div className="test_info_block_second">
             <div className="name_block_test">
                 <span className="title_block">1 блок <br/></span>
                 <span className="sub_title_block">Краткое описание</span>
@@ -17,4 +17,4 @@ const Test_info_block = () => {
 };
 
 
-export default Test_info_block;
+export default Test_info_block_second;

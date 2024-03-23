@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { render } from "react-dom";
 import './App.css';
 import Reg from './Register';
 import Header from './Header';
 import Lk_data from './Lk_data';
 import Login from './Login';
-import New_project from './New_project';
 import Recomend from './Recomend_block';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Test_block from './Test';
