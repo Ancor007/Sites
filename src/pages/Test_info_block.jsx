@@ -1,6 +1,6 @@
 import React from "react"
 
-const Test_info_block_second = () => {
+const Test_info_block_second = (props) => {
     return (
         <div className="test_info_block_second">
             <div className="name_block_test">
