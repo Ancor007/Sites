@@ -11,8 +11,7 @@ import New_project from './New_project';
 const Main = () => {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
+      <div className="App"> 
         <Routes>
           <Route path="/lk" element={<Lk_data />} />
           <Route path="/lk" element={<Recomend />} />

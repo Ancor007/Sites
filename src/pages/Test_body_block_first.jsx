@@ -1,12 +1,24 @@
 import React from "react"
 
+
 const Test_body_block_first = (props) => {
-    return (
+    
+
+     return (
         <div className="test_body_block">
-            <span className="question"> Вопрос</span>
-            <input type="radio" id="no" value="0" name="q1" />
-            <input type="radio" id="yes" value="1" name="q1" />
+            
+        {props.questions.map((question, index) => (
+        <div key={index}>
+          <span className="question">  {question}</span>
+          <input name={index} type="radio" id="first_q" value="0"  />
+          <span className="first_variant_q"> {props.answers1[index]}</span>
+          <input name={index} type="radio" id="second_q" value="1"  />
+          <span className="second_varian_q"> {props.answers2[index]}</span>
         </div>
+      ))}
+
+
+            </div> 
     )
 
 };
