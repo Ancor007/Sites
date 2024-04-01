@@ -5,7 +5,7 @@ const Test_info_block_second = (props) => {
         <div className="test_info_block_second">
             <div className="name_block_test">
                 <span className="title_block">{props.number_block + " блок" }<br/></span>
-                <span className="sub_title_block">Название</span>
+                <span className="sub_title_block">{props.title}</span>
             </div>
             <div className="Insruction"> 
                 <span className="title_instruction">Инструкция по прохождению тестирования</span>

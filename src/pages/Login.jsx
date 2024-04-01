@@ -14,7 +14,7 @@ const Login = () => {
                 <input className="Login_submit_button" type="submit" value="Войти"/>
                 <NavLink to="/resetpassword" className="forget_password"> проблемы со входом? </NavLink> 
             </div>
-            <NavLink to="reg" className="reg_button"> Регистрация </NavLink>
+            <NavLink to="/reg" className="reg_button"> Регистрация </NavLink>
         </div>
     )
 

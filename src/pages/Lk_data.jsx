@@ -1,23 +1,29 @@
 import React from "react"
 import { NavLink } from "react-router-dom";
 import User_photo from "./User_photo";
+import './lk_data.css';
+import Recomend from './Recomend_block';
 
 
 
 const ResultTest = () => {
   return (
     <div className='Result_test'>
-      Здесь будут отображаться резульатты теста
-      <NavLink to="/test">Пройти тест</NavLink>
+      Здесь будут отображаться результаты теста
+      <NavLink className = 'test' to="/test">Пройти тест</NavLink>
     </div>
   )
 }
 
 const Persanal_info = () => {
   return (
-    <span className='Persanal_info'>Личные данные <br />
-      Имя: <br />
-      Возвраст: <br />
+    <span className='Persanal_info'>
+        <br />
+        <div className="Data"> 
+        Фамилия: Иванов<br/> 
+        Имя: Иван<br />
+        Возраст: 19 лет<br /> 
+        </div>
     </span>
   )
 }
@@ -25,21 +31,25 @@ const Persanal_info = () => {
 const Hard_skills_info = () => {
   return (
     <div className='Hard_skills'>
+      <div className="Hard_skills_txt">
       Hardskills List <br />
-      For exsample: FrontEnd
+      FrontEnd <br />
+      BackEnd <br />
+      FullStack <br />
+      </div>
     </div>
   )
 }
 
 const Edit_lk_info_button = () => {
   return(
-    <a href="/edit"> Редоктировать</a>
+    < a className = ' edit' href="/edit"> Редактировать</a>
   )
 }
 
 const Logoutbutton = () => {
   return (
-    <a href="/logout"> Выйти из аккаунта</a>
+    <a className="Logout" href="/logout"> Выйти из аккаунта</a>
   )
 }
 
@@ -52,7 +62,7 @@ const Lk_data = () => {
           <Persanal_info />
         </div>
         <Hard_skills_info />
-        <ResultTest />
+        <Recomend />
       </div>
       <Logoutbutton />
     </div>

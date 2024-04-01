@@ -7,7 +7,7 @@ const User_photo = (src) => {
       e.target.src = fallbackSrc;
     };
   
-    return <img className='User_photo' src={main_src} onError={onError} width="150px" height="150px" />;
+    return <img className='User_photo' src={main_src} onError={onError} />;
   };
 
   export default User_photo;

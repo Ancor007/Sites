@@ -3,6 +3,7 @@ import Test_info_block from './Test_info_block';
 import Test_body_block_second from './Test_body_block_second';
 import { NavLink } from 'react-router-dom';
 import Test_body_block_first from './Test_body_block_first';
+import './test_block.css'
 
 const Test_block = () => {
     // Data block
@@ -17,11 +18,10 @@ const Test_block = () => {
     // 
     return (
         <div className='test_block'>
-            <NavLink to='/lk'>Вернуться</NavLink>
-            <Test_info_block number_block={1} info={infoblock_1} />
+            <Test_info_block title="Общепсихологическая типология личности" number_block={1} info={infoblock_1} />
             <Test_body_block_first  questions={question_for_1_block} answers1 ={var_otv_1} answers2 = {var_otv_2} />
             
-            <Test_info_block number_block={2} info={infoblock_2} moreinfo={moreinfoblock_2}/>
+            <Test_info_block title="Шкала психологического стресса" number_block={2} info={infoblock_2} moreinfo={moreinfoblock_2}/>
             <Test_body_block_second questions={question_for_2_block} />
 
         </div>
