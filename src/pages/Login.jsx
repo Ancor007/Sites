@@ -1,19 +1,30 @@
 import React from "react"
 import './login.css';
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+
 
 const Login = () => {
+
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+    
+    const heandle_submit = async (e) => {
+        e.preventDefault()
+        console.log(username,password)
+    }
+
     return (
         <div className="Login_module">
             <div className="span_vhod"><span>Вход в аккаунт</span></div>
-            <div className="Login_conteiner">
+            <form className="Login_conteiner" onSubmit={heandle_submit}>
                 <label className = "Reg_label" for="Username">Username</label>
-                <input className="Login_input" type="text" id="Username"/> 
+                <input className="Login_input" type="text" id="Username" onChange={(e) => setUsername(e.target.value)}/> 
                 <label className = "Reg_label" for="password">Пароль</label>
-                <input className="Login_input" type="password" id="password" /> 
+                <input className="Login_input" type="password" id="password" onChange={(e) => setPassword(e.target.value)}/> 
                 <input className="Login_submit_button" type="submit" value="Войти"/>
                 <NavLink to="/resetpassword" className="forget_password"> проблемы со входом? </NavLink> 
-            </div>
+            </form>
             <NavLink to="/reg" className="reg_button"> Регистрация </NavLink>
         </div>
     )
