@@ -2,6 +2,7 @@ import React from "react"
 import './login.css';
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { instance } from "./axios";
 
 
 const Login = () => {
@@ -11,8 +12,14 @@ const Login = () => {
     
     const heandle_submit = async (e) => {
         e.preventDefault()
-        console.log(username,password)
+        const userData = {
+            username,
+            password
+        } 
+        const user = await instance.post( 'auth/logined', userData)
+        console.log(user.data )
     }
+
 
     return (
         <div className="Login_module">
