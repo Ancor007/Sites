@@ -148,6 +148,10 @@ border: none;
   top: -25px;
 }
 
+.Reg_input_submit:active{
+  background: rgb(152, 199, 198);
+}
+
 .Reg_input_submit {
   color: rgb(255, 255, 255);
 font-family: Montserrat;

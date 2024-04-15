@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import './reg.css';
-import { NavLink } from "react-router-dom";
+import { instance } from "./axios";
 
 const Reg = () => {
 
@@ -14,6 +14,20 @@ const Reg = () => {
     const heandle_submit = async (e) => {
         e.preventDefault()
         console.log(name,surname, age, username, password, comfpassword)
+        if (password === comfpassword){
+            const userData = {
+            name,
+            surname,
+            age,
+            username,
+            password
+        }
+        const newUser = await instance.post( 'localhost', userData) 
+    }
+        else {
+            throw new Error("Пароли не совпадают")
+        }
+        
     }
 
     return (

@@ -3,10 +3,12 @@ import './login.css';
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { instance } from "./axios";
-
+import { useDispatch } from "react-redux";
+import { setUser } from "./store/loginSlice";
 
 const Login = () => {
-
+    const dispatch = useDispatch();
+    
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     
