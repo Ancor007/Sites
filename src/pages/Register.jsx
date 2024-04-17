@@ -1,34 +1,55 @@
 import React, { useState } from "react"
 import './reg.css';
 import { instance } from "./axios";
+import axios from "axios";
 
 const Reg = () => {
 
     const [name, setName] = useState()
-    const [surname, setSurname] = useState()
+    const [lastname, setSurname] = useState()
     const [age, setAge] = useState()
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
-    const [comfpassword, setComfpassword] = useState()
+    const [confirmPassword, setComfpassword] = useState()
+    const [email, setEmail] = useState()
 
     const heandle_submit = async (e) => {
-        e.preventDefault()
-        console.log(name,surname, age, username, password, comfpassword)
-        if (password === comfpassword){
-            const userData = {
+        e.preventDefault();
+    
+        // Проверка соответствия паролей
+        if (password !== confirmPassword) {
+            console.error("Пароли не совпадают");
+            return;
+        }
+
+        const ageInt = parseInt(age, 10);
+        if (isNaN(ageInt)) {
+            console.error("Некорректное значение возраста");
+            return;
+        }
+    
+        // Создание объекта данных пользователя
+        const userData = {
             name,
-            surname,
-            age,
+            lastname,
+            age: ageInt,
             username,
-            password
+            password,
+            email
+        };
+        try {
+            const response = await axios.post('http://localhost:8080/auth/signup', userData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        } catch (error) {
+            // Обработка ошибок
+            console.error('Ошибка при регистрации:', error);
+            // Добавьте действия для обработки ошибок (например, показать сообщение пользователю)
         }
-        const newUser = await instance.post( 'localhost', userData) 
-    }
-        else {
-            throw new Error("Пароли не совпадают")
-        }
-        
-    }
+    };
+    
 
     return (
         <div className="Reg_module">

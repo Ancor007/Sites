@@ -17,8 +17,8 @@ const Main = () => {
           <Route path="/lk" element={<Lk_data />} />
           <Route path="/lk" element={<Recomend />} />
           <Route path="/test" element={<Test_block />} />
-          <Route path='/reg' element={<Reg />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Reg />} />
+          <Route path='/signin' element={<Login />} />
           <Route path='/create-project' element={<New_project />} />
           </Routes>
       </div>

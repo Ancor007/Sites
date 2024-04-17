@@ -18,7 +18,7 @@ const Login = () => {
             username,
             password
         } 
-        const user = await instance.post( 'auth/logined', userData)
+        const user = await instance.post( 'http://localhost:8080/auth/signin', userData)
         console.log(user.data )
     }
 
