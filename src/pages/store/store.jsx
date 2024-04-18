@@ -8,4 +8,8 @@ const store = configureStore({
     }
 })
 
+export const AppDispatch = store.dispatch
+
+export const RootState = store.getState
+
 export default store  

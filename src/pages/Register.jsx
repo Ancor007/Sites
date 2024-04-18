@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import './reg.css';
-import { instance } from "./axios";
 import axios from "axios";
 
 const Reg = () => {
@@ -11,8 +10,9 @@ const Reg = () => {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     const [confirmPassword, setComfpassword] = useState()
-    const [email, setEmail] = useState()
+    // const [email, setEmail] = useState()
 
+    
     const heandle_submit = async (e) => {
         e.preventDefault();
     
@@ -35,7 +35,7 @@ const Reg = () => {
             age: ageInt,
             username,
             password,
-            email
+           // email
         };
         try {
             const response = await axios.post('http://localhost:8080/auth/signup', userData, {
@@ -54,6 +54,7 @@ const Reg = () => {
     return (
         <div className="Reg_module">
         <div className="singUpxD">Регистрация</div>
+
             {/* <NavLink to="/login" ><div className="back_img"></div></NavLink> */}
             {/* <div className="backround-button-role">
                 <div className="reg_choise_person"> Выберите роль</div>

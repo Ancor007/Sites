@@ -2,8 +2,9 @@ import React from "react"
 import './login.css';
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { instance } from "./axios";
+import { instance } from "./axios/axios";
 import { useDispatch } from "react-redux";
+import { loginUser } from "./store/loginSlice";
 
 
 const Login = () => {
@@ -18,8 +19,15 @@ const Login = () => {
             username,
             password
         } 
-        const user = await instance.post( 'http://localhost:8080/auth/signin', userData)
-        console.log(user.data )
+        try {
+            const user = await instance.post( '/auth/signin', userData)
+        dispatch(loginUser(user.data))
+        } catch (error) {
+            // Обработка ошибок
+            console.error('Ошибка при регистрации:', error);
+            // Добавьте действия для обработки ошибок (например, показать сообщение пользователю)
+        }
+        
     }
 
 

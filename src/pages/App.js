@@ -7,21 +7,26 @@ import Recomend from './Recomend_block';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Test_block from './Test';
 import New_project from './New_project';
+import { Provider } from 'react-redux';
+import store from './store/store';
+
 
 
 const Main = () => {
   return (
     <BrowserRouter>
+    <Provider store={store}>
       <div className="App"> 
         <Routes>
-          <Route path="/lk" element={<Lk_data />} />
-          <Route path="/lk" element={<Recomend />} />
+          <Route path="/" element={<Lk_data />} />
+          <Route path="/" element={<Recomend />} />
           <Route path="/test" element={<Test_block />} />
           <Route path='/signup' element={<Reg />} />
           <Route path='/signin' element={<Login />} />
           <Route path='/create-project' element={<New_project />} />
           </Routes>
       </div>
+      </Provider>
     </BrowserRouter>
   );
 }
