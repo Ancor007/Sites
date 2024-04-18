@@ -9,6 +9,7 @@ import Test_block from './Test';
 import New_project from './New_project';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import PrivateRoute from './store/privateRoute';
 
 
 
@@ -18,11 +19,14 @@ const Main = () => {
     <Provider store={store}>
       <div className="App"> 
         <Routes>
-          <Route path="/" element={<Lk_data />} />
-          <Route path="/" element={<Recomend />} />
+        <Route element={<PrivateRoute/>}>
+          
+        </Route>
+        <Route path='/login' element={<Login />} />
+          <Route path='/reg' element={<Reg />} />
+          <Route path="/lk" element={<Lk_data />} />
+          <Route path="/lk" element={<Recomend />} />
           <Route path="/test" element={<Test_block />} />
-          <Route path='/signup' element={<Reg />} />
-          <Route path='/signin' element={<Login />} />
           <Route path='/create-project' element={<New_project />} />
           </Routes>
       </div>

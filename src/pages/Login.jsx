@@ -1,6 +1,6 @@
 import React from "react"
 import './login.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { instance } from "./axios/axios";
 import { useDispatch } from "react-redux";
@@ -9,19 +9,23 @@ import { loginUser } from "./store/loginSlice";
 
 const Login = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     
     const heandle_submit = async (e) => {
         e.preventDefault()
-        const userData = {
-            username,
-            password
-        } 
         try {
+            const userData = {
+                username,
+                password
+            } 
             const user = await instance.post( '/auth/signin', userData)
-        dispatch(loginUser(user.data))
+        await dispatch(loginUser(user.data))
+        navigate('/lk')
+
+
         } catch (error) {
             // Обработка ошибок
             console.error('Ошибка при регистрации:', error);
